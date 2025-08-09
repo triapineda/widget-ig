@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notion → IG Grid</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <div class="left"></div>
+      <div class="right">
+        <button id="aspectBtn" aria-label="Toggle aspect ratio" title="Toggle aspect ratio">Square</button>
+        <button id="refreshBtn" aria-label="Refresh feed" title="Refresh feed">Refresh</button>
+      </div>
+    </div>
+    <div id="grid" class="grid" aria-live="polite" aria-busy="false"></div>
+  </div>
+
+  <script>
+    window.IG_ENDPOINT = window.IG_ENDPOINT || new URLSearchParams(location.search).get('endpoint') || '/api/posts';
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
